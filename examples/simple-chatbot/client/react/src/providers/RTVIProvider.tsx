@@ -8,7 +8,7 @@ const transport = new DailyTransport();
 const client = new RTVIClient({
   transport,
   params: {
-    baseUrl: 'http://localhost:7860',
+    baseUrl: 'http://0.0.0.0:7860',
     endpoints: {
       connect: '/connect',
     },

@@ -179,7 +179,12 @@ async def rtvi_connect(request: Request) -> Dict[Any, Any]:
     """
     print("Creating room for RTVI connection")
     room_url, token = await create_room_and_token()
-    print(f"Room URL: {room_url}")
+    print(f"DEBUG: Daily room_url: '{room_url}'") # <-- Añade esto
+    print(f"DEBUG: Daily token: '{token}'")       # <-- Añade esto
+
+    if not room_url:
+        print("ERROR: room_url is empty. Bot cannot start.")
+        return # O maneja el error de otra forma
 
     # Start the bot process
     try:
